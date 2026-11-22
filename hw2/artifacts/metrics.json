@@ -1,0 +1,127 @@
+{
+  "track": "cv",
+  "model": "yolo26n.pt",
+  "revision": "ultralytics==8.4.216; sha256=9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "dataset": "Clash of Clans Computer Vision Model - https://universe.roboflow.com/find-this-base/clash-of-clans-vop4y - CC BY 4.0",
+  "classes": [
+    "AD",
+    "AirSweeper",
+    "BombTower",
+    "Canon",
+    "ClanCastle",
+    "Eagle",
+    "Inferno",
+    "KingPad",
+    "Mortar",
+    "QueenPad",
+    "RcPad",
+    "Scattershot",
+    "TH13",
+    "WardenPad",
+    "WizzTower",
+    "Xbow"
+  ],
+  "n_train": 88,
+  "n_val": 24,
+  "n_test": 13,
+  "params_total": 2572280,
+  "baseline": {
+    "split": "test",
+    "coco_map50": 0.0062959076016836715,
+    "heuristic_map50": 0.0037123427208086016,
+    "heuristic_ap50_per_class": {
+      "AD": 0.0001589319771137953,
+      "AirSweeper": 0.0,
+      "BombTower": 0.00035285815102328866,
+      "Canon": 0.00041695892759722547,
+      "ClanCastle": 0.0015384615384615387,
+      "Eagle": 0.03736263736263737,
+      "Inferno": 0.0,
+      "KingPad": 0.009615384615384616,
+      "Mortar": 0.000303951367781155,
+      "QueenPad": 0.0,
+      "RcPad": 0.0,
+      "Scattershot": 0.0007541478129713424,
+      "TH13": 0.0016366612111292963,
+      "WardenPad": 0.0011312217194570137,
+      "WizzTower": 0.00016194331983805668,
+      "Xbow": 0.005964325529542921
+    }
+  },
+  "final": {
+    "map50": 0.9183553096197458,
+    "map50_95": 0.7304953365647808,
+    "precision": 0.8611343907207571,
+    "recall": 0.9074834808908776,
+    "per_class": {
+      "AD": 0.995,
+      "AirSweeper": 0.9549314766579845,
+      "BombTower": 0.995,
+      "Canon": 0.9819461933023842,
+      "ClanCastle": 0.9683333333333334,
+      "Eagle": 0.9353409090909091,
+      "Inferno": 0.995,
+      "KingPad": 0.7339903680770554,
+      "Mortar": 0.975,
+      "QueenPad": 0.995,
+      "RcPad": 0.41902048068031034,
+      "Scattershot": 0.995,
+      "TH13": 0.995,
+      "WardenPad": 0.766645299145299,
+      "WizzTower": 0.9944202898550724,
+      "Xbow": 0.994056603773585
+    }
+  },
+  "ablation": {
+    "parameter": "freeze",
+    "baseline": {
+      "imgsz": 960,
+      "freeze": 0,
+      "map50": 0.93,
+      "map50_95": 0.757,
+      "train_time_sec": 256
+    },
+    "modified": {
+      "imgsz": 960,
+      "freeze": 11,
+      "map50": 0.849427382907001,
+      "map50_95": 0.6584174104394168,
+      "train_time_sec": 243.77499457900012
+    },
+    "reference_640": {
+      "imgsz": 640,
+      "freeze": 0,
+      "map50": 0.833,
+      "map50_95": 0.639,
+      "train_time_sec": 207
+    }
+  },
+  "errors": {
+    "tp": 878,
+    "class": 32,
+    "localization": 0,
+    "background": 24,
+    "missed": 68
+  },
+  "device": "Tesla T4",
+  "train_time_sec": 254.56800424599987,
+  "fast_mode": false,
+  "train_args": {
+    "epochs": 60,
+    "imgsz": 960,
+    "batch": 16,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "patience": 10,
+    "augment": false,
+    "val": true,
+    "seed": 0
+  },
+  "run_times": {
+    "heuristic": 0.10196826800029157,
+    "train": 254.56800424599987,
+    "final_test": 4.453836897999736,
+    "ablation_freeze_train": 243.77499457900012,
+    "ablation_freeze_val": 1.5898407740005496
+  }
+}
